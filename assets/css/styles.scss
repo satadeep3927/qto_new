@@ -1,0 +1,381 @@
+$bg-light : #e5e5e5;
+$color-primary : #007be5;
+$color-secondary : #8638e5;
+$padding-inline : 0.6rem;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+.main-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-light;
+}
+.top-menu{
+    width: 100%;
+    background-color: #2c2c2c;
+    height: 50px;
+    color: white;
+}
+.tool-bar{
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tool-bar li{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tool-bar li:hover{
+    background-color: black;
+}
+[data-tooltip]{
+    position: relative;
+    transition: 0.1s;
+}
+[data-tooltip]::after{
+    content: attr(data-tooltip);
+    font-size: 13px;
+    padding: 0.3rem 1.2rem;
+    background-color: #2c2c2c;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -70%;
+    left: 40%;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.1s;
+    transition-delay: 0s;
+    white-space: nowrap;
+}
+[data-tooltip]::before{
+    content: "";
+    border: 8px solid transparent;
+    border-bottom-color:#2c2c2c ;
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.1s;
+    transition-delay: 0s;
+}
+[data-tooltip]:hover::after, [data-tooltip]:hover::before{
+    opacity: 1;
+    transition-delay: 0.6s;
+} 
+[data-tooltip]:focus::after, [data-tooltip]:focus::before{
+    opacity: 0;
+    transition-delay: 0.6s;
+} 
+.dropdown{
+    position: relative;
+}
+.dropdown:focus{
+    background-color: $color-primary !important;
+}
+.dropdown:focus .dropdown-menu{
+    display: block;
+}
+.dropdown-menu{
+    min-width: 170px;
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    background-color: #2c2c2c;
+    display: none;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+
+}
+.dropdown-menu li{
+    padding: 0.5rem 1rem;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 12px;
+    cursor: default;
+}
+.mr{
+    margin-right: 0.4rem;
+}
+.dropdown-menu li:hover{
+    color: #fff;
+    background-color: $color-primary;
+}
+.main-container__body{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+.sidebar__left{
+    width: 250px;
+    background-color: white;
+    overflow-y: auto;
+    height: 100%;
+    padding-block: 1.2rem;
+}
+.heading{
+    font-weight: 500;
+    font-size: 13px;
+    padding-inline: $padding-inline;
+}
+.heading small{
+    display: block;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 0.3rem;
+    font-weight: 400;
+    font-size: 12px
+}
+hr{
+    margin-block: 0.3rem;
+}
+.search__box{
+    width: calc(100% - 2 * $padding-inline);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-inline: auto;
+    margin-block: 0.9rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-block: 0.3rem;
+}
+.search__box input{
+    border: none;
+    outline: 0;
+}
+.search__box i{
+    font-size: 13px;
+    margin-right: 0.4rem;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 14px;
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid white;
+    display: none;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+*:hover::-webkit-scrollbar-thumb{
+    display: block;
+}
+.file__container{
+    margin-top: 1.2rem;
+    font-size: 13px;
+    width: 100%;
+}
+.folder__view summary{
+    padding-block: 0.4rem;
+    padding-inline: $padding-inline;
+    cursor: default;
+    border: 1px solid transparent;
+
+}
+
+.folder__view summary::marker{
+    font-size: 10px;
+    color: rgba(0,0,0,0.5);
+}
+.file__view{
+    padding-block: 0.4rem;
+    padding-inline: $padding-inline;
+    padding-left: 1.1rem;
+    width: 100%;
+    cursor: default;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid transparent;
+
+}
+.file__view:hover{
+    background-color: rgba(0,0,0,0.05);
+    color: $color-secondary;
+    border: 1px solid $color-secondary;
+}
+.folder__view summary:hover{
+    background-color: rgba(0,0,0,0.05);
+    color: $color-secondary;
+    border: 1px solid $color-secondary;
+}
+.file__view::before{
+    content: "\f03e";
+    font-family: "Font awesome 6 pro";
+    font-weight: 300;
+    margin-right: 0.6rem;
+    font-size: 12px;
+}
+.drawing-board__container{
+    width: calc(100% - 550px);
+    height: 100%;
+}
+.sidebar__right{
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+.tool__tabs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+
+}
+.tool__tabs span{
+    font-size: 12px;
+    padding: 0.6rem 0.9rem;
+    cursor: pointer;
+    color: rgba(0,0,0,0.5);
+    font-weight: 500;
+}
+.tool__tabs span:hover{
+    color: black;
+}
+.folder__view summary::before{
+    content: "\f07b";
+    font-family: "Font awesome 6 pro";
+    font-weight: 300;
+    margin-right: 0.6rem;
+    font-size: 12px;
+}
+.setting__tab{
+    font-size: 12px;
+    display: none;
+}
+.setting__tab.active{
+    display: block;
+}
+.form-input{
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.09);
+    padding: 6px;
+    margin-block: 0.7rem;
+    outline: 0;
+}
+.form-input:focus{
+    border: 2px solid $color-primary;
+}
+.padding{
+    padding: $padding-inline;
+}
+.tool__box{
+    padding-inline: $padding-inline;
+    border-block: 1px solid rgba(0,0,0,0.1);
+}
+.tool__box:focus-within .tool__box-header::after{
+    transform: translateY(-50%) rotate(0deg);
+}
+.tool__box:focus-within .tool__box-body{
+    max-height: 120px;
+}
+.tool__box-header{
+    padding-block: 0.9rem;
+    position: relative;
+}
+.tool__box-header::after{
+    content: "\f106";
+    font-family: 'Font awesome 6 pro';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    transition: 0.1s;
+}
+.tool__box-body{
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.2s;
+
+}
+.tool__box-body.open{
+    max-height: 300px;
+    height: fit-content;
+}
+.tool__box.open .tool__box-header::after{
+    content: "";
+}
+.color-input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 8px;
+    border: 1px solid rgba(0,0,0,0.09);
+    margin-block: 0.9rem;
+}
+.color-input:focus-within{
+    border-color: #007be5;
+}
+.color-input [type="color"]{
+    height: 25px;
+    width: 20px;
+    outline: 0;
+    border: none;
+}
+.color-input input[type="text"]{
+    border: none;
+    outline: 0;
+    margin-left: 0.6rem;
+}
+.color-palette:hover{
+    background-color: rgba(0,0,0,0.05);
+    .btn__use{
+        display: block;
+    }
+}
+.color-palette{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 12px $padding-inline;
+    align-items: center;
+}
+.color-preview{
+    height: 15px;
+    width: 15px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    margin-right: 0.6rem;
+}
+.color-palette__name{
+    text-transform: uppercase;
+    font-size: 11px;
+}
+.btn__use{
+    color: #2c2c2c;
+    margin-left: auto;
+    font-size: 13px;
+    cursor: pointer;
+    display: none;
+}
+.tab.active{
+    color: black;
+}
+.takeoff__tab{
+    font-size: 12px;
+    display: none;
+}
+.takeoff__tab.active{
+    display: block;
+}

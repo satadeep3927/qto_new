@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <title>Quantitytakeoff</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="top-menu">
+            <ul class="tool-bar">
+                <li data-tooltip="Files" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-file-alt"></i>
+                    <ul class="dropdown-menu">
+                        <li>Upload Files</li>
+                        <li>Upload Folder</li>
+                        <li>Delete All</li>
+                        <li>
+                            <i class="fa-light fa-search mr"></i> Quick Search
+                        </li>
+                    </ul>
+                </li>
+                <li data-tooltip="Rotate" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-rotate"></i>
+                </li>
+                <li data-tooltip="Dimension Line" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-arrows-left-right"></i>
+                </li>
+                <li data-tooltip="Measurement Trace" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-square"></i>
+                </li>
+                <li data-tooltip="Counts" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-00"></i>
+                </li>
+                <li data-tooltip="Document Link" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-link"></i>
+                </li>
+                <li data-tooltip="Text" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-text"></i>
+                </li>
+                <li data-tooltip="Print" class="dropdown" tabindex="0">
+                    <i class="fa-light fa-print"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="main-container__body">
+            <div class="sidebar__left">
+                <div class="search__box">
+                    <i class="fa-light fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <p class="heading">
+                    <i class="fa-light fa-file-alt mr"></i>
+                    Plans and Documents
+                    <small>Plan Documents and Supporting Files</small>
+                </p>
+                <div class="file__container">
+                    <details class="folder__view">
+                        <summary>Plans</summary>
+                        <a class="file__view" href="">C-V2</a>
+                        <details class="folder__view">
+                            <summary>Architecture</summary>
+                            <a class="file__view" href="">C-V2</a>
+                        </details>
+
+                    </details>
+                    <a class="file__view" href="">C-V2</a>
+                    <a class="file__view" href="">C-V2</a>
+                </div>
+            </div>
+            <div class="drawing-board__container">
+
+            </div>
+            <div class="sidebar__right">
+                <div class="tool__tabs">
+                    <span class="tab" data-target="takeoff__tab">Takeoffs</span>
+                    <span class="tab active" data-target="setting__tab">Settings</span>
+                </div>
+                <div class="setting__tab active">
+                    <div class="padding">
+                        <label>Name</label>
+                        <input type="text" class="form-input" placeholder="Takeoff Name">
+                    </div>
+
+                    <div class="tool__box" tabindex="0">
+                        <div class="tool__box-header">
+                            Fill
+                        </div>
+                        <div class="tool__box-body">
+                            <div class="color-input">
+                                <input type="color" name="" id="">
+                                <input type="text" value="000000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tool__box" tabindex="0">
+                        <div class="tool__box-header">
+                            Stroke
+                        </div>
+                        <div class="tool__box-body">
+                            <div class="color-input">
+                                <input type="color" name="" id="">
+                                <input type="text" value="000000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tool__box open" tabindex="0">
+                        <div class="tool__box-header">
+                            Quick Start
+                        </div>
+                    </div>
+                    <div class="color-palette">
+                        <span class="color-preview" style="border-color: #fc761c;background-color:#ffb482;"></span>
+                        <div class="color-palette__name">fc761c</div>
+                        <span class="btn__use">
+                            <i class="fa-light fa-crosshairs"></i>
+                        </span>
+
+                    </div>
+                    <div class="color-palette">
+                        <span class="color-preview" style="border-color: #ed1cfc;background-color:#ff82fb;"></span>
+                        <div class="color-palette__name">fc761c</div>
+                        <span class="btn__use">
+                            <i class="fa-light fa-crosshairs"></i>
+                        </span>
+
+                    </div>
+                    <div class="color-palette">
+                        <span class="color-preview" style="border-color: #1c4cfc;background-color:#82a5ff;"></span>
+                        <div class="color-palette__name">fc761c</div>
+                        <span class="btn__use">
+                            <i class="fa-light fa-crosshairs"></i>
+                        </span>
+
+                    </div>
+                    <div class="color-palette">
+                        <span class="color-preview" style="border-color: #d7fc1c;background-color:#dcff82;"></span>
+                        <div class="color-palette__name">fc761c</div>
+                        <span class="btn__use">
+                            <i class="fa-light fa-crosshairs"></i>
+                        </span>
+
+                    </div>
+                    <div class="color-palette">
+                        <span class="color-preview" style="border-color: #fc1ca2;background-color:#ff82cd;"></span>
+                        <div class="color-palette__name">fc761c</div>
+                        <span class="btn__use">
+                            <i class="fa-light fa-crosshairs"></i>
+                        </span>
+
+                    </div>
+                </div>
+                <div class="takeoff__tab">
+                    <div class="tool__box open" tabindex="0">
+                        <div class="tool__box-header">
+                            Measurement Traces
+                        </div>
+                    </div>
+                    <div class="color-palette">
+                        <span class="color-preview" style="border-color: #fc761c;background-color:#ffb482;"></span>
+                        <div class="color-palette__name">Area Takeoff1</div>
+                        <span class="btn__use">
+                            <i class="fa-light fa-crosshairs"></i>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/css/js/app.js"></script>
+</body>
+
+</html>
